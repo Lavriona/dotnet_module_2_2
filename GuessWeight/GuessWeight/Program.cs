@@ -9,7 +9,7 @@ namespace GuessWeight
         {
             minUsers = 2,
             maxUsers = 8,
-            maxMove = 3
+            maxMove = 100
         }
 
         static void Main(string[] args)
