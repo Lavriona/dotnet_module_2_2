@@ -9,7 +9,7 @@ namespace GuessWeight
         {
             minUsers = 2,
             maxUsers = 8,
-            maxMove = 3
+            maxMove = 100
         }
 
         static PlayerBase[] users = new PlayerBase[0];
@@ -148,13 +148,14 @@ namespace GuessWeight
 
                     if (move == basket)
                     {
-                        Console.WriteLine($"Выиграл игрок {users[j].Name} (тип {users[i].PlayerType.ToString()})!");
+                        Console.WriteLine($"Выиграл игрок {users[j].Name} (тип {users[j].PlayerType.ToString()})!");
                         isRunPlay = false;
                         break;
                     }
                     else if (countMoves == (byte)EnumCount.maxMove)
                     {
                         FindWinner();
+                        isRunPlay = false;
                         break;
                     }
 

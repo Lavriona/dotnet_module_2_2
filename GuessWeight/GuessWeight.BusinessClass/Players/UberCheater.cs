@@ -16,7 +16,7 @@ namespace GuessWeight.BusinessClass
 
             while (tryMove)
             {
-                number = moves != null && moves[index]  != null ? ++moves[index][moves.Length-1] : ++number;
+                number = moves != null && moves.Length > 0 && moves[index]  != null && moves[index].Length > 0 ? ++moves[index][moves[index].Length-1] : ++number;
 
                 if ( moves != null && moves.Length > 0 )
                 {
@@ -31,18 +31,27 @@ namespace GuessWeight.BusinessClass
                                 if (moves[i][j] == number)
                                 {
                                     isRepeated = true;
+                                    tryMove = false;
                                     break;
                                 }
                             }
+                        } else
+                        {
+                            tryMove = false;
                         }
                        
                         if (isRepeated)
+                        { 
                             break;
+                        }          
                         else if (i == moves.Length - 1)
                         {
                             tryMove = false;
                         }
                     }
+                } else
+                {
+                    tryMove = false;
                 }
                 
             }

@@ -14,7 +14,7 @@ namespace GuessWeight.BusinessClass
 
         public virtual byte MakeMove(byte[][] moves = null, byte index = 0)
         {
-            return (byte)new Random().Next(40, 140);
+            return (byte)new Random().Next();
         }
     }
 }
