@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GuessWeight.BusinessClass
 {
-    public class UberCheater : User
+    public class UberCheater : PlayerBase
     {
-        public byte MakeMove(byte[][] moves, byte index)
+        public override byte MakeMove(byte[][] moves, byte index)
         {
             byte number = 39;
             bool tryMove = true;

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace GuessWeight.BusinessClass
 {
-    public class Notepad : User
+    public class Notepad : PlayerBase
     {
-        public byte MakeMove(byte[] moves)
+        public override byte MakeMove(byte[][] allMoves, byte index)
         {
+            var moves = allMoves[index];
             byte number = 0;
             bool tryMove = true;
 

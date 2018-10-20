@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace GuessWeight.BusinessClass
 {
-    public class Uber : User
+    public class Uber : PlayerBase
     {
-        public byte MakeMove(byte[] moves)
+        public override byte MakeMove(byte[][] allMoves, byte index)
         {
+            var moves = allMoves[index];
             byte move = 39;
        
             if (moves != null && moves.Length > 0)
